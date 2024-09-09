@@ -5,3 +5,9 @@ tasks:
     desc: Run `build` task
     cmds:
       - go run cmd/main.go
+
+  tailwind-watch:
+    desc: Run Tailwind CSS in watch mode
+    cmds:
+      - npx tailwindcss -i ./static/public/css/input.css -o ./static/public/css/output.css --watch
+    ignore_error: true

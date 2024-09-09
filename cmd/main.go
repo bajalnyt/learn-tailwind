@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	http.HandleFunc("GET /index", homePageHandler)
+	http.HandleFunc("GET /", homePageHandler)
 
 	// Serve all static resources
-	http.Handle("/static/*",
+	http.Handle("GET /static/*",
 		http.StripPrefix("/static/",
 			http.FileServer(
 				http.Dir("./static"),
@@ -30,5 +30,5 @@ func postsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./static/src/index.html")
+	http.ServeFile(w, r, "./static/public/index.html")
 }
