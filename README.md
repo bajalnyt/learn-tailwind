@@ -1,12 +1,15 @@
 
 ## Initial setup
+1. Install Tailwind CSS
 ```
 npm init -y
-npm install tailwindcss postcss-cli autoprefixer
+npm install -D tailwindcss
+npx tailwindcss init
 ```
+2. Configure your template paths
+Create `tailwind.config.js`
 
-`npx tailwind init`
+3. Create src/input.css
 
-Create `postcss.config.js`
-
-The course used tailwind v1, but the latest is v3. There is a change in tailwind.css format as explained in this [SO](https://stackoverflow.com/a/71889746/1092133) answer.
+4. Start tailwind cli build process
+`npx tailwindcss -i ./src/input.css -o ./src/output.css --watch`
